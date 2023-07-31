@@ -8,14 +8,15 @@ const deploy = {
    */
   async main(): Promise<void> {
     try {
-      const TipCreator: ContractFactory = await ethers.getContractFactory(
-        'TipCreator'
+      const Card3 : ContractFactory = await ethers.getContractFactory(
+        'Card3'
       );
-      const tipCreator: Contract = await TipCreator.deploy();
+      const card3: Contract = await Card3.deploy("Card3 Network", "Card3", "https://gateway-testnet.sao.network/sao/");
 
-      await tipCreator.deployed();
+      await card3.deployed();
 
-      console.log('TipCreatorContract deployed to:', tipCreator.address);
+      // card3 to: 0xdFC3d764572a6989175476e0c16faE9dE404470B
+      console.log('card3 to:', card3.address);
     } catch (error) {
       console.log(error);
     }
